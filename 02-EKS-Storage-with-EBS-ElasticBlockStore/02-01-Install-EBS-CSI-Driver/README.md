@@ -77,3 +77,11 @@ kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernete
 # Verify ebs-csi pods running
 kubectl get pods -n kube-system
 ```
+
+This creates following items:
+
+- serviceaccount - ebs-csi-controller-sa
+- clusterroles, clusterbindings
+- deployment - ebs-csi-controller with 4/4
+- daemonset - ebs-csi-node with 3/3
+- csi driver - ebs.csi.aws.com

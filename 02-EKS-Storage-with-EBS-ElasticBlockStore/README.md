@@ -2,6 +2,12 @@
 
 Install EBS CSI Driver and use EBS Volumes for persistence storage to Database
 
+## Topics
+
+- Install EBS CSI Driver
+- Create MySQL Database Deployment & ClusterIP Service
+- Create User Management Microservice Deployment & NodePort Service
+
 ### References:
 
 https://github.com/kubernetes-sigs/aws-ebs-csi-driver
