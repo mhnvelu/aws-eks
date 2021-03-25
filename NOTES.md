@@ -97,3 +97,23 @@
 - The configuration of the volume can be changed dynamically.
 - AWS recommends EBS for data that must be `quickly accessible` and requires `long-term persistence`.
 - EBS is well suited for `database-type applications` that rely on random reads and writes and to `through-put instensive applications` that perform long continuous reads and writes.
+
+#### Drawbacks of EBS for DB
+
+- Complex setup to achieve HA
+- Complex Multi-AZ support for EBS. EBS is a zone level resource which means the volumes are zone restricted and can't be across the entire region.
+- Complex Master-Master DB setup
+- Complex Master-Workers DB setup
+- No automatic backup & recovery
+- No auto-upgrade of DB
+
+#### EKS cluster + AWS RDS
+
+- Using k8s ExternalName service, the k8s cluster can connect to AWS RDS service.
+- Features of AWS RDS:
+  - Automatic Backup & Recovery
+  - HA
+  - Read Replicas
+  - Automatic upgrades
+  - Metrics & Monitoring
+  - Multi-AZ support
