@@ -30,6 +30,8 @@
 
 * A node group is one or more EC2 instances that are deployed in an EC2 Autoscaling group.
 
+* Any number of nodegroups can be created under a single cluster.
+
 * All instances in a node group must
     - Be the same instance type
     - Be running the same AMI
