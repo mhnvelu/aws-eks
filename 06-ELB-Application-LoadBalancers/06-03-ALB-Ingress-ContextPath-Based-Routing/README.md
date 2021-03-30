@@ -35,7 +35,7 @@ alb.ingress.kubernetes.io/healthcheck-path: /usermgmt/health-status
 - **07-ALB-Ingress-ContextPath-Based-Routing.yml**
 
 ```yml
-# Annotations Reference:  https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/
+# Annotations Reference:  https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/docs/guide/ingress/annotations.md
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
