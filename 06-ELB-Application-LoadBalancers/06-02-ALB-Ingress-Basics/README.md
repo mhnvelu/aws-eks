@@ -28,7 +28,7 @@
 ### Understand about ALB Ingress Annotations
 
 - Understand about ALB Ingress Annotations.
-- **Reference:** https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/
+- **Reference:** https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/docs/guide/ingress/annotations.md
 
 ## Step-03: Create ALB kubernetes basic Ingress Manifest
 
@@ -36,7 +36,7 @@
 - **05-ALB-Ingress-Basic.yml**
 
 ```yml
-# Annotations Reference:  https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/
+# Annotations Reference:  https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/docs/guide/ingress/annotations.md
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
