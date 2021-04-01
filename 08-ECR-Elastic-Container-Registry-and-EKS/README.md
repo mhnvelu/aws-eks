@@ -1,5 +1,14 @@
 # AWS ECR - Elastic Container Registry Integration & EKS
 
+## Introduction
+
+- ECR - Elastic Container Registry is a fully managed Docker container registry that makes it easy for developers to store, manage and deploy Docker container images.
+- ECR is integrated with EKS simplifying our development to production workflow.
+- ECR eliminates the need to operate our own container repositories or worry about scaling the underling infrastructure.
+- ECR hosts the images in a Highly Available and scalable architecture, allowing us to reliably deploy containers for the applications.
+- Integration with AWS IAM provides resource-level control of each repository.
+- With ECR, there is no upfront fees. We pay only for the amount of data that is stored in the repositories and data transferred to the internet.
+
 ## Step-01: What is this section covers?
 
 - Build a Docker image
