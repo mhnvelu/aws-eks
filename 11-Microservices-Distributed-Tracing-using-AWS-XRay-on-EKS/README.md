@@ -57,8 +57,8 @@
 
 - We are going to deploy a application which will also have a `ALB Ingress Service` and also will register its DNS name in Route53 using `External DNS`
 - Which means we should have both related pods running in our EKS cluster.
-- We have installed **ALB Ingress Controller** as part of section [08-01-ALB-Ingress-Install](/08-ELB-Application-LoadBalancers/08-01-ALB-Ingress-Install/README.md)
-- We have installed **External DNS** as part of section [08-06-01-Deploy-ExternalDNS-on-EKS](/08-ELB-Application-LoadBalancers/08-06-ALB-Ingress-ExternalDNS/08-06-01-Deploy-ExternalDNS-on-EKS/README.md)
+- We have installed **ALB Ingress Controller** as part of section [06-01-ALB-Ingress-Install](/06-ELB-Application-LoadBalancers/08-01-ALB-Ingress-Install/README.md)
+- We have installed **External DNS** as part of section [06-06-01-Deploy-ExternalDNS-on-EKS](/06-ELB-Application-LoadBalancers/06-06-ALB-Ingress-ExternalDNS/06-06-01-Deploy-ExternalDNS-on-EKS/README.md)
 
 ```
 # Verify alb-ingress-controller pod running in namespace kube-system
@@ -190,12 +190,12 @@ kubectl describe daemonset xray-daemon
 - **07-ALB-Ingress-SSL-Redirect-ExternalDNS.yml**
 
 ```yml
-# Change-1-For-You: Update with your SSL Cert ARN when using template
-alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:180789647333:certificate/9f042b5d-86fd-4fad-96d0-c81c5abc71e1
+# Change-1: Update with your SSL Cert ARN when using template
+alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:180789647333:certificate/9f042b5d-86fd-4fad-96d0-c81c5abc71e1
 
-# Change-2-For-You: Update with your "yourdomainname.com"
+# Change-2: Update with your "yourdomainname.com"
 # External DNS - For creating a Record Set in Route53
-external-dns.alpha.kubernetes.io/hostname: services-xray.kubeoncloud.com, xraydemo.kubeoncloud.com
+external-dns.alpha.kubernetes.io/hostname: services-xray.awseksstudy.com, xraydemo.awseksstudy.com
 ```
 
 ## Step-07: Deploy Manifests
@@ -212,8 +212,8 @@ kubectl get pods
 
 ```
 # Test
-https://xraydemo.kubeoncloud.com/usermgmt/notification-xray
-https://xraydemo.kubeoncloud.com/usermgmt/notification-xray
+https://services-xray.awseksstudy.com/usermgmt/notification-xray
+https://xraydemo.awseksstudy.com/usermgmt/notification-xray
 
 # Your Domain Name
 https://<Replace-your-domain-name>/usermgmt/notification-xray

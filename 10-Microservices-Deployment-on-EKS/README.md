@@ -246,13 +246,13 @@ kubectl get rs
 kubectl rollout history deployment/notification-microservice
 
 # Access Application (Should see V2)
-https://services.kubeoncloud.com/usermgmt/notification-health-status
+https://services.awseksstudy.com/usermgmt/notification-health-status
 
 # Roll back to Previous Version
 kubectl rollout undo deployment/notification-microservice
 
 # Access Application (Should see V1)
-https://services.kubeoncloud.com/usermgmt/notification-health-status
+https://services.awseksstudy.com/usermgmt/notification-health-status
 ```
 
 ## Step-16: Rollout New Deployment - Update manifest & kubectl apply
@@ -271,13 +271,13 @@ kubectl get rs
 kubectl rollout history deployment/notification-microservice
 
 # Access Application (Should see V2)
-https://services.kubeoncloud.com/usermgmt/notification-health-status
+https://services.awseksstudy.com/usermgmt/notification-health-status
 
 # Roll back to Previous Version
 kubectl rollout undo deployment/notification-microservice
 
 # Access Application (Should see V1)
-https://services.kubeoncloud.com/usermgmt/notification-health-status
+https://services.awseksstudy.com/usermgmt/notification-health-status
 ```
 
 ## Step-17: Clean-up
