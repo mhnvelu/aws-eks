@@ -1,43 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hpa-demo-deployment
+  name: vpa-demo-deployment
   labels:
-    app: hpa-nginx
+    app: vpa-nginx
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
-      app: hpa-nginx
+      app: vpa-nginx
   template:
     metadata:
       labels:
-        app: hpa-nginx
+        app: vpa-nginx
     spec:
       containers:
-        - name: hpa-nginx
+        - name: vpa-nginx
           image: stacksimplify/kubenginx:1.0.0
           ports:
             - containerPort: 80
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "500Mi"
-              cpu: "200m"
+              cpu: "5m"
+              memory: "5Mi"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hpa-demo-service-nginx
+  name: vpa-demo-service-nginx
   labels:
-    app: hpa-nginx
+    app: vpa-nginx
 spec:
   type: NodePort
   selector:
-    app: hpa-nginx
+    app: vpa-nginx
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 31231
+      nodePort: 31232
