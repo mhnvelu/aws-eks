@@ -32,6 +32,15 @@
 - There are many considerations we need to be aware of before we decide our k8s workloads to run on Fargate.
 - https://docs.aws.amazon.com/eks/latest/userguide/fargate.html
 
+## Create EKS Cluster with Fargate Linux Nodes
+
+```
+eksctl create cluster \
+--name eksdemo1 \
+--region eu-west-1 \
+--fargate
+```
+
 ## Topics
 
 1. Fargate Profiles - Basic

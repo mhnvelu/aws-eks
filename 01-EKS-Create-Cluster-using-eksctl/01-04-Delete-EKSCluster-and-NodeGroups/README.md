@@ -1,6 +1,18 @@
 # Delete EKS Cluster & Node Groups
 
-## Step-01: Delete Node Group
+- When you're done using an Amazon EKS cluster, you should delete the resources associated with it so that you don't incur any unnecessary costs.
+- If you have active services in your cluster that are associated with a load balancer, you must delete those services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have orphaned resources in your VPC that prevent you from being able to delete the VPC.
+
+## Step-01: Delete Services
+
+Delete any services that have an associated EXTERNAL-IP value. These services are fronted by an Elastic Load Balancing load balancer, and you must delete them in Kubernetes to allow the load balancer and associated resources to be properly released.
+
+```
+kubectl get svc --all-namespaces
+kubectl delete svc <service-name>
+```
+
+## Step-02: Delete Node Group
 
 - We can delete a nodegroup separately using below `eksctl delete nodegroup`
 
@@ -17,7 +29,7 @@ eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
 eksctl delete nodegroup --cluster=eksdemo1 --name=eksdemo1-ng-public1
 ```
 
-## Step-02: Delete Cluster
+## Step-03: Delete Cluster
 
 - We can delete cluster using `eksctl delete cluster`
 

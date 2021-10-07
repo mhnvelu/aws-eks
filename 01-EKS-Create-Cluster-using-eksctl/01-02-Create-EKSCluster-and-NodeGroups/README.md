@@ -49,6 +49,9 @@ eksctl utils associate-iam-oidc-provider \
 ## Step-03: Create EC2 Keypair
 
 - Create a new EC2 Keypair with name as `kube-demo`
+  ```
+  aws ec2 create-key-pair --region eu-west-1 --key-name kube-demo
+  ```
 - This keypair will be used when creating the EKS NodeGroup.
 - This will help us to login to the EKS Worker Nodes using Terminal.
 
@@ -149,6 +152,12 @@ Use putty
 
 - We need to allow `All Traffic` on worker node security group
 - This is needed when we use NodePort ServiceType for our workloads on EKS cluster. NodePort service generates different dynamic ports. So we can access the application as `WORKER_NODE_PUBLIC_IP:NODE_PORT`
+
+## IAM entity as K8s cluster administrator
+
+- The IAM entity (user or role) that created the cluster in above steps is added to the Kubernetes RBAC authorization table as the administrator (with system:masters permissions).
+- Initially, only that IAM user can make calls to the Kubernetes API server using kubectl. If you want other users to have access to your cluster, then you must add them to the `aws-auth ConfigMap`.
+- Restrict access to IMDS : Assign IAM roles to all of your Kubernetes service accounts so that pods only have the minimum permissions that they need, and no pods in the cluster require access to the Amazon EC2 instance metadata service (IMDS) for other reasons.
 
 ## Additional References
 

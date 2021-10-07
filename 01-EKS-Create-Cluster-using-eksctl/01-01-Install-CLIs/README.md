@@ -1,5 +1,10 @@
 # Install AWS, kubectl & eksctl CLI's
 
+2 Options available:
+
+- eksctl - simple command line utility for creating and managing Kubernetes clusters on Amazon EKS.
+- AWS managment console and AWS CLI.
+
 ## Step-00: Introduction
 
 - Install AWS CLI
