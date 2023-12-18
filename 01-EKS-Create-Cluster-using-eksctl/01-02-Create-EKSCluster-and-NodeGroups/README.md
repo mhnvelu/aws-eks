@@ -20,11 +20,18 @@ eksctl create cluster --name=eksdemo1 \
 
 # Get List of clusters
 eksctl get clusters
+
+# View Cluster nodes
+kubectl get nodes -o wide
+
+# View Pods
+kubectl get pods -A -o wide
 ```
 
 - This will not create worker nodes. It will create only the EKS Control Plane on the specified zones.
 - By default, API endpoints are available for public access.
-- Once the cluster is created, the kubeconfig file is automatically created and saved locally. Any kubectl and eksctl commands will use this kubeconfig file.
+- Once the cluster is created, the kubeconfig file is automatically created and saved locally in `~/.kube`. Any kubectl and eksctl commands will use this kubeconfig file.
+- The IAM principal that created the cluster is the only principal that can make calls to the Kubernetes API server with kubectl or the AWS Management Console. If you want other IAM principals to have access to your cluster, then you need to add them
 
 ## Step-02: Create & Associate IAM OIDC Provider for our EKS Cluster
 

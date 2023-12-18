@@ -54,6 +54,7 @@ aws ec2 describe-vpcs
 ```
 
 ## Step-02: Install kubectl CLI
+- To communicate with a Kubernetes cluster, we need a tool to interact with the Kubernetes API
 
 - **IMPORTANT NOTE:** Kubectl binaries for EKS please prefer to use from Amazon (**Amazon EKS-vended kubectl binary**)
 - This will help us to get the exact Kubectl client version based on our EKS Cluster version. You can use the below documentation link to download the binary.
@@ -85,6 +86,8 @@ kubectl version --client
 ```
 
 ## Step-03: Install eksctl CLI
+- **eksctl** is an infrastructure as code (IaC) utility that uses AWS CloudFormation to easily create  Amazon EKS cluster. 
+- It also creates additional Kubernetes resources, such as service accounts
 
 ### Step-03-01: eksctl on windows or linux
 

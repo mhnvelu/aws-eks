@@ -31,6 +31,31 @@
 
 ```
 
+#### Compute
+- Worker machines called nodes. 
+- Selecting the appropriate Amazon EKS cluster node type is crucial for meeting your specific requirements and optimizing resource utilization.
+- Node types offered :
+  - AWS Fargate
+    - Serverless compute engine for containers that eliminates the need to manage the underlying instances
+    - Specify application's resource needs, and AWS automatically provisions, scales, and maintains the infrastructure.
+  - Karpentar
+    -  High-performance Kubernetes cluster autoscaler that helps improve application availability and cluster efficiency
+    - Launches right-sized compute resources in response to changing application load
+  - Managed Node Groups
+    - Blend of automation and customization for managing a collection of Amazon EC2 instances
+    - AWS takes care of tasks like patching, updating, and scaling nodes
+    - Custom kubelet arguments are supported, opening up possibilities for advanced CPU and memory management policies
+  - Self Managed Groups
+    - Full control over your Amazon EC2 instances
+    - We are responsible for managing, scaling, and maintaining the nodes, giving you total control over the underlying infrastructure.
+    - Granular control and customization of the nodes
+
+#### Deployment Options
+- Amazon EKS in the cloud
+- Amazon EKS in Outposts
+- Amazon EKS Anywhere
+- Amazon EKS Distro
+
 #### Worker Nodes & Node Groups
 
 ```
