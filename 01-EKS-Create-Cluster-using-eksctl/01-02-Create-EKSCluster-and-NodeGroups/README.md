@@ -16,6 +16,7 @@
 eksctl create cluster --name=eksdemo1 \
                       --region=eu-west-1 \
                       --zones=eu-west-1a,eu-west-1b \
+                      --vpc-private-subnets subnet-ExampleID1,subnet-ExampleID2 \
                       --without-nodegroup
 
 # Get List of clusters
@@ -35,7 +36,7 @@ kubectl get pods -A -o wide
 
 ## Step-02: Create & Associate IAM OIDC Provider for our EKS Cluster
 
-- To enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create & associate OIDC identity provider.
+- To use some Amazon EKS add-ons or to enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create & associate OIDC identity provider.
 - To do so using `eksctl` we can use the below command.
 - Use latest eksctl version
 
@@ -122,7 +123,7 @@ kubectl config view --minify
 - Click on **IAM Role associated to EC2 Worker Nodes**
 - The policies included are related to ECR, Worker Node, etc.
 - The pods running on these Worker Nodes can access these AWS services.
-- The other way is create IAM role, assign policies, create k8s service account and assocaite to IAM role. Then assign the service account to Pods.
+- The other way is create IAM role, assign policies, create k8s service account and associate to IAM role. Then assign the service account to Pods.
 
 ### Verify Security Group Associated to Worker Nodes
 
